@@ -8,7 +8,6 @@
 - Curso: Sistemas de Informação
 - Semestre/Ano correntes: 2023/1
 - Link para o seu GitHub: [Juliana Lemos](https://github.com/julianamlemos)
-- [[https://media.tenor.com/HUaQ5m_dA_IAAAAC/happy-laughing.gif]]
 
 ## [Projeto final:](./Projeto/README.md)
 
