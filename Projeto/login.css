@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-image: url(https://th.bing.com/th/id/OIP.POfxwpbfCkxxGZViColyMQHaEU?pid=ImgDet&rs=1);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    border-bottom: 1px solid black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.main {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 0.5rem;
+}
+
+.menu-item {
+    margin: 0.5rem;
+    padding: 1rem;
+    border: 1px solid #c1c1c1;
+    align-items: center;
+}
+
+li>a {
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50vw;
+    background-color: white;
+}
+
+.search>input {
+    width: 90%;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgb(248, 174, 193);
+}
+
+.search>input:focus {
+    background-color: whitesmoke;
+    border: 1px;
+    outline: 1px solid rgb(248, 174, 193);
+    /*alterou a cor da borda da caixa de buscas*/
+}
+
+
+/*rem -> proporção em relação ao elemento root*/
+
+.search>button {
+    width: 20%;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 6px;
+    background-color: purple;
+    color: white;
+}

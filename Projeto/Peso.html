@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Peso ideal</title>
+</head>
+    <style>
+        body {
+            font-family: poppins;
+            margin: 0;
+            padding: 20px;
+            }
+
+        h1 {
+        text-align: center;
+        }
+
+        .form-group {
+        margin-bottom: 10px;
+        }
+
+        .result {
+        text-align: center;
+        margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cálculo de IMC e Ganho de Peso</h1>
+
+    <h2>Cálculo de IMC</h2>
+        <div class="form-group">
+        <label for="weight">Peso (kg):</label>
+        <input type="number" step="0.1" id="weight">
+    </div>
+    <div class="form-group">
+        <label for="height">Altura (m):</label>
+        <input type="number" step="0.01" id="height">
+    </div>
+    <button onclick="calculateBMI()">Calcular IMC</button>
+
+    <div id="bmiResult" class="result"></div>
+        <h2>Cálculo de Ganho de Peso na Gravidez</h2>
+    <div class="form-group">
+        <label for="prePregnancyWeight">Peso antes da gravidez (kg):</label>
+        <input type="number" step="0.1" id="prePregnancyWeight">
+    </div>
+    <div class="form-group">
+        <label for="weeksPregnant">Semanas de gestação:</label>
+        <input type="number" id="weeksPregnant">
+    </div>
+    <button onclick="calculateWeightGain()">Calcular Ganho de Peso</button>
+
+    <div id="weightGainResult" class="result"></div>
+
+    <script>
+        function calculateBMI() {
+        var weight = parseFloat(document.getElementById("weight").value);
+        var height = parseFloat(document.getElementById("height").value);
+        var bmi = weight / (height * height);
+
+        var bmiResult = document.getElementById("bmiResult");
+        bmiResult.innerHTML = "Seu IMC é: " + bmi.toFixed(2);
+    }
+    function calculateWeightGain() {
+        var prePregnancyWeight = parseFloat(document.getElementById("prePregnancyWeight").value);
+        var weeksPregnant = parseInt(document.getElementById("weeksPregnant").value);
+        var weightGain = 0;
+        if (weeksPregnant <= 12) {
+            weightGain = 0.5;
+        } else if (weeksPregnant <= 28) {
+            weightGain = 0.35;
+        } else if (weeksPregnant <= 40) {
+            weightGain = 0.25;
+        }
+
+        var totalWeightGain = prePregnancyWeight + (weeksPregnant * weightGain);
+        var weightGainResult = document.getElementById("weightGainResult");
+        weightGainResult.innerHTML = "Seu ganho de peso estimado é: " + totalWeightGain.toFixed(1) + " kg";
+        }
+    </script>
+
+</body>
+</html>
